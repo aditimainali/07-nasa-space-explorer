@@ -53,6 +53,12 @@ button.addEventListener("click", async function() {
 
     // Fetch NASA data from the local server
     const response = await fetch(apiURL);
+
+    const contentType = response.headers.get("content-type") || "";
+    if (!contentType.includes("application/json")) {
+      throw new Error("The NASA data server is not available. Deploy server.js with the site.");
+    }
+
     const data = await response.json();
 
     // Check for API errors
