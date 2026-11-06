@@ -5,6 +5,9 @@ Your task is to build an interactive web app that fetches and displays these pho
 
 You'll get to use your skills to build something that's actually connected to real-world data from one of the most iconic organizations in the world.
 
+## Run locally
+Install Node.js 18 or newer, then run `node server.js` from this folder. Open `http://localhost:3000` in your browser. The local server fetches APOD articles from NASA so the gallery can display their images and descriptions.
+
 ## Starter Files
 - The provided files include a NASA logo, date inputs, a button, a placeholder for your gallery, and basic layout and styling to help you get started.
 - It also includes built-in logic (in `dateRange.js`) to handle the valid APOD date range—from June 16, 1995 to today. No need to modify it.
