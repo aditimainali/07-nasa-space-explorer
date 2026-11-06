@@ -21,10 +21,20 @@ const facts = [
   "The Moon is slowly moving away from Earth."
 ];
 
-// Choose random fact
-const randomNumber = Math.floor(Math.random() * facts.length);
+// Start with a random fact, then cycle through the list.
+let factIndex = Math.floor(Math.random() * facts.length);
+const factText = document.getElementById("factText");
 
-document.getElementById("factText").textContent = facts[randomNumber];
+function showNextFact() {
+  factText.classList.remove("fact-slide-in");
+  factText.textContent = facts[factIndex];
+  factIndex = (factIndex + 1) % facts.length;
+  void factText.offsetWidth;
+  factText.classList.add("fact-slide-in");
+}
+
+showNextFact();
+setInterval(showNextFact, 3000);
 
 // Get images when button is clicked
 button.addEventListener("click", async function() {
